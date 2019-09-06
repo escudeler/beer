@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "84aa3dab-2af8-4900-b2ac-5673c7b55998",
+		"name": "CraftBeer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "craftbeer/beers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/craftbeer/beers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"craftbeer",
+						"beers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "craftbeer/beers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Colorado Ribeirão\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops, Wyeast 3655 Fermenter\",\r\n  \"alcoholContent\": \"4.0 - 5.0%\",\r\n  \"price\": 11.90,\r\n  \"category\": \"Lager\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/craftbeer/beers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"craftbeer",
+						"beers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/craftbeer/beers/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/craftbeer/beers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"craftbeer",
+						"beers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "craftbeer/beers/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Bruxelas Juice\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops and Wyeast 3655 Fermenter\",\r\n  \"alcoholContent\": \"4.8 - 5.5%\",\r\n  \"price\": 10.00,\r\n  \"category\": \"Belgian Pale Ale\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/craftbeer/beers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"craftbeer",
+						"beers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "craftbeer/beers/1",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Bruxelas Juice test\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops, Wyeast 3655 Fermenter\",\r\n  \"category\": \"Pale Ale\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/craftbeer/beers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"craftbeer",
+						"beers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "craftbeer/beers/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9000/craftbeer/beers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"craftbeer",
+						"beers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

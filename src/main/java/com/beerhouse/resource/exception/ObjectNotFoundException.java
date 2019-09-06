@@ -1,4 +1,4 @@
-package com.beerhouse.service;
+package com.beerhouse.resource.exception;
 
 public class ObjectNotFoundException extends RuntimeException{
 	private static final long serialVersionUID = 1L;

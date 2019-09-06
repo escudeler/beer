@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.beerhouse.entidade.Beer;
-import com.beerhouse.entidade.dto.BeerDTO;
-import com.beerhouse.entidade.dto.BeerDTOPatch;
+import com.beerhouse.entidade.dto.BeerInsertDTO;
+import com.beerhouse.entidade.dto.BeerPatchDTO;
+import com.beerhouse.entidade.dto.BeerUpdateDTO;
 import com.beerhouse.service.BeerService;
 
 @RestController
@@ -36,7 +37,7 @@ public class BeerResources {
 		return ResponseEntity.ok().body(service.findById(id));
 	}
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> insert(@Valid @RequestBody BeerDTO dto) {
+	public ResponseEntity<Void> insert(@Valid @RequestBody BeerInsertDTO dto) {
 		Beer beer = service.fromDTO(dto);
 		beer = service.insert(beer);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -45,7 +46,7 @@ public class BeerResources {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> updPut(@Valid @RequestBody BeerDTO dto, @PathVariable Integer id){
+	public ResponseEntity<Void> updPut(@Valid @RequestBody BeerUpdateDTO dto, @PathVariable Integer id){
 		Beer beer = service.fromDTO(dto);
 		beer.setId(id); 
 		beer = service.update(beer);
@@ -53,7 +54,7 @@ public class BeerResources {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PATCH)
-	public ResponseEntity<Void> updPatch(@Valid @RequestBody BeerDTOPatch dto, @PathVariable Integer id){
+	public ResponseEntity<Void> updPatch(@Valid @RequestBody BeerPatchDTO dto, @PathVariable Integer id){
 		Beer beer = service.fromDTO(dto);
 		beer.setId(id); 
 		beer = service.update(beer);

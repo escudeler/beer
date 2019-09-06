@@ -1,7 +1,6 @@
 package com.beerhouse.service;
 
 import java.math.BigDecimal;
-import java.util.Comparator;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -10,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.beerhouse.entidade.Beer;
-import com.beerhouse.entidade.dto.BeerDTO;
-import com.beerhouse.entidade.dto.BeerDTOPatch;
+import com.beerhouse.entidade.dto.BeerInsertDTO;
+import com.beerhouse.entidade.dto.BeerPatchDTO;
+import com.beerhouse.entidade.dto.BeerUpdateDTO;
 import com.beerhouse.repository.BeerRepository;
+import com.beerhouse.resource.exception.ObjectNotFoundException;
 
 @Service
 public class BeerService {
@@ -25,13 +26,14 @@ public class BeerService {
 
 	public Beer findById(Integer id) {
 		return repository.findById(id)
-				.orElseThrow(() -> new ObjectNotFoundException("Beer with id " + id + " not found."));
+				.orElseThrow(() -> new ObjectNotFoundException("Não foi encontrada a cerveja com id " + id + "."));
 	}
 
-	public Beer insert(@Valid Beer beer) {
+	public Beer insert(Beer beer) {
 		beer.setId(0);
 		return repository.save(beer);
 	}
+
 	public Beer update(Beer beer) {
 		Beer beerDB = findById(beer.getId());
 		merge(beerDB, beer);
@@ -55,14 +57,26 @@ public class BeerService {
 		findById(id);
 		repository.deleteById(id);
 	}
+	
+	public boolean validaNome(String nome, Integer id) {
+		Beer bd = repository.findByName(nome);
+		if (id == null)
+			return bd == null;
+		else
+			return bd == null || ( bd != null && bd.getId().equals(id));
+	}
 
-
-	public Beer fromDTO(@Valid BeerDTO dto) {
+	public Beer fromDTO(@Valid BeerInsertDTO dto) {
 		return new Beer(dto.getId(), dto.getName(), dto.getIngredients(), dto.getAlcoholContent(), dto.getPrice(),
 				dto.getCategory());
 	}
 
-	public Beer fromDTO(BeerDTOPatch dto) {
+	public Beer fromDTO(@Valid BeerUpdateDTO dto) {
+		return new Beer(dto.getId(), dto.getName(), dto.getIngredients(), dto.getAlcoholContent(), dto.getPrice(),
+				dto.getCategory());
+	}
+
+	public Beer fromDTO(@Valid BeerPatchDTO dto) {
 		return new Beer(dto.getId(), dto.getName(), dto.getIngredients(), dto.getAlcoholContent(), dto.getPrice(),
 				dto.getCategory());
 	}
