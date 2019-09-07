@@ -39,7 +39,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Colorado Ribeirão\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops, Wyeast 3655 Fermenter\",\r\n  \"alcoholContent\": \"4.0 - 5.0%\",\r\n  \"price\": 11.90,\r\n  \"category\": \"Lager\"\r\n}"
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Bruxelas Juice\",\r\n  \"ingredients\": \"Em fase de pesquisa\",\r\n  \"alcoholContent\": \"5%\",\r\n  \"price\": 100,\r\n  \"category\": \"Pale Ale\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:9000/craftbeer/beers",
@@ -91,7 +91,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Bruxelas Juice\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops and Wyeast 3655 Fermenter\",\r\n  \"alcoholContent\": \"4.8 - 5.5%\",\r\n  \"price\": 10.00,\r\n  \"category\": \"Belgian Pale Ale\"\r\n}"
+					"raw": "{\r\n  \"name\": \"Bruxelas Juices\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops and Wyeast 3655 Fermenter\",\r\n  \"alcoholContent\": \"4.8 - 5.5%\",\r\n  \"price\": 10.00,\r\n  \"category\": \"Belgians Pale Ale\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:9000/craftbeer/beers/1",
@@ -123,7 +123,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Bruxelas Juice test\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Kent Golding pellet hops, Wyeast 3655 Fermenter\",\r\n  \"category\": \"Pale Ale\"\r\n}"
+					"raw": "{\r\n  \"name\": \"Bruxelas Juice Extra\",\r\n  \"ingredients\": \"Durst Pilsner malt, Dingemans Cara45 malt, Special Series Kent Golding pellet hops, Wyeast 3655 Fermenter\",\r\n  \"category\": \"Belgian Pale Ale\",\r\n  \"price\": 12\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:9000/craftbeer/beers/1",

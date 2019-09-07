@@ -1,3 +1,26 @@
+# Configuração
+
+Estou commitando a API no Profile de Testes, executando a API na Base de Dados em memória no H2. 
+Utilizando esta base para rodar os testes do JUnit.
+
+Para acesso a API com CRUD em Banco de Dados MySQL, é preciso executar a criação da base e tabela presente 
+no Script 'beer/docs/script.sql' e ajustar o profile active do application.yml para 'real'. 
+	OBS: No script disponibilizado, visando facilitar, já deixei alguns inserts de cervejas, estes são opcionais.        
+
+A Coleção do Postman encontra-se na pasta 'beer/docs/CraftBeer.postman_collection.json'.
+
+# Regras aplicadas
+
+## Unicidade
+	O critério adotado para a regra de unicidade das cervejas foi manter o nome da cerveja único. 
+
+## Regras de preenchimento
+	Todos os campos devem ser preenchidos.
+	Campos Nome e Categoria devem ter até 50 characteres.
+	Campo Teor Alcóolico deve ter até 20 characteres.
+	Campo Preço deve ser maior que zero. 
+	
+
 # Cadastro de cervejas artesanais
 
 O objetivo deste projeto é avaliar o desenvolvimento de uma aplicação java utilizando Spring e APIs.

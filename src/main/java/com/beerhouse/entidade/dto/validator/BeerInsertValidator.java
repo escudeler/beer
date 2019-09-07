@@ -26,7 +26,7 @@ public class BeerInsertValidator  implements ConstraintValidator<BeerInsert, Bee
 	public boolean isValid(BeerInsertDTO dto, ConstraintValidatorContext context) {
 		List<FieldMessage> list = new ArrayList<>();
 		
-		if (service.validaNome(dto.getName(), null))
+		if (!service.validaNome(dto.getName(), null))
 			list.add(new FieldMessage("name","Nome já cadastrado no sistema."));
 		
 		for (FieldMessage e : list) {

@@ -19,7 +19,7 @@ public class BeerUpdateDTO {
 	private String name;
 
 	@Length(min = 5, max = 150, message = "Campo Ingredientes deve ter de 5 a 150 caracteres.")
-	@NotBlank(message = "Campo Ingredientes deve seer preenchido.")
+	@NotBlank(message = "Campo Ingredientes deve ser preenchido.")
 	private String ingredients;
 	
 	@Length(max = 20, message = "Campo Teor Alcóolico deve ter no máximo 20 caracteres.")

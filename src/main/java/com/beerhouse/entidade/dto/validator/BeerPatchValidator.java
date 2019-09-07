@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintValidator;
@@ -38,9 +39,10 @@ public class BeerPatchValidator implements ConstraintValidator<BeerPatch, BeerPa
 		Integer idUri = Integer.parseInt(map.get("id"));
 
 		List<FieldMessage> list = new ArrayList<>();
-		Beer beerBD = repository.findByName(dto.getName());
-
-		if (beerBD != null && !idUri.equals(beerBD.getId()))
+		
+		Optional<Beer> beerBD = repository.findById(idUri);
+		
+		if (beerBD != null && !idUri.equals(beerBD.get().getId()))
 			list.add(new FieldMessage("name", "Nome já cadastrado no sistema."));
 
 		if (dto.getName() != null) {
@@ -64,7 +66,7 @@ public class BeerPatchValidator implements ConstraintValidator<BeerPatch, BeerPa
 				list.add(new FieldMessage("alcoholContent", "Campo Teor Alcóolico deve ter no máximo 20 caracteres."));
 		}
 
-		if (dto.getPrice() != null && dto.getPrice().compareTo(BigDecimal.valueOf(0.01)) > 0)
+		if (dto.getPrice() != null && dto.getPrice().compareTo(BigDecimal.ZERO) <= 0)
 			list.add(new FieldMessage("price", "Campo Preço deve ser maior que zero."));
 
 		if (dto.getCategory() != null) {
