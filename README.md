@@ -5,7 +5,7 @@ Utilizando esta base para rodar os testes do JUnit.
 
 Para acesso a API com CRUD em Banco de Dados MySQL, é preciso executar a criação da base e tabela presente 
 no Script 'beer/docs/script.sql' e ajustar o profile active do application.yml para 'real'. 
-	OBS: No script disponibilizado, visando facilitar, já deixei alguns inserts de cervejas, estes são opcionais.        
+	OBS: No script disponibilizado, visando facilitar, já deixei alguns inserts de cervejas, estes são opcionais.
 
 A Coleção do Postman encontra-se na pasta 'beer/docs/CraftBeer.postman_collection.json'.
 
